@@ -1,4 +1,4 @@
-module github.com/minkj1992/fiber-wire
+module github.com/minkj1992/go-playground/wire
 
 go 1.18
 

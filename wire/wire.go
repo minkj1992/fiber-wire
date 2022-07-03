@@ -5,10 +5,10 @@ package main
 
 import (
 	"github.com/google/wire"
-	"github.com/minkj1992/fiber-wire/entity"
+	"github.com/minkj1992/go-playground/wire/entity"
 )
 
-func InitializeEvent() entity.Event { // injector
+func InitializeEvent(phrase string) (entity.Event, error) { // injector
 	wire.Build(entity.NewEvent, entity.NewGreeter, entity.NewMessage) // provider
-	return entity.Event{}
+	return entity.Event{}, nil
 }

@@ -1,4 +1,10 @@
-# go with fiber and wire
+# go playground
 
-Using fiber as web framework and `wire` as DI tool.
 
+
+- wire
+- fiber
+- gorm relationship
+- pointer signature
+- generic
+- go test
