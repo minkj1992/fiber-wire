@@ -1,10 +1,5 @@
 # go playground
 
-
-
-- wire
-- fiber
-- gorm relationship
-- pointer signature
-- generic
-- go test
+```
+$ go run ./fileSearch/concurrent_file_search.go
+```

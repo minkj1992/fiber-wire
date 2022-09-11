@@ -1,7 +1,9 @@
+BASE_DIR := $(shell pwd)
+
 # git commit message
 msg ?=
 # git branch
-b = main
+b := main
 
 run:
 	wire
