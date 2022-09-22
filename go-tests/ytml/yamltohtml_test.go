@@ -30,7 +30,7 @@ func TestYAMLToHTML(t *testing.T) {
 		t.Run(test.desc, func(t *testing.T) {
 			result, err := ytml.YamlToHTML(test.path)
 			if err != nil {
-				t.Errorf("Invalid path is given.")
+				t.Errorf(err.Error())
 			}
 
 			t.Log(result)
