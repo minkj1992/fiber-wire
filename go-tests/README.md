@@ -3,4 +3,5 @@
 
 ```bash
 $ go test ./... -v
+$ cd calculator && go test -run=TestCalculateIsArmstrong -v
 ```
