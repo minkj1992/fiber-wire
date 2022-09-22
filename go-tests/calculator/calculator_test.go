@@ -1,7 +1,9 @@
-package calculator
+package calculator_test
 
 import (
 	"testing"
+
+	"github.com/minkj1992/go-playground/go-tests/calculator"
 )
 
 type TestCase struct {
@@ -15,10 +17,10 @@ func TestCalculateIsArmstrong(t *testing.T) {
 	t.Run("Should return true for 371", func(t *testing.T) {
 		tc := TestCase{
 			value:    371,
-			expected: false,
+			expected: true,
 		}
 
-		tc.actual = CalculateIsArmstrong(tc.value)
+		tc.actual = calculator.CalculateIsArmstrong(tc.value)
 		if tc.actual != tc.expected {
 			t.Errorf("CalculateIsArmstrong returned an unexpected result")
 		}
@@ -30,7 +32,7 @@ func TestCalculateIsArmstrong(t *testing.T) {
 			expected: true,
 		}
 
-		tc.actual = CalculateIsArmstrong(tc.value)
+		tc.actual = calculator.CalculateIsArmstrong(tc.value)
 		if tc.actual != tc.expected {
 			t.Errorf("CalculateIsArmstrong returned an unexpected result")
 		}
@@ -42,7 +44,7 @@ func TestCalculateIsArmstrong(t *testing.T) {
 			expected: false,
 		}
 
-		testCase.actual = CalculateIsArmstrong(testCase.value)
+		testCase.actual = calculator.CalculateIsArmstrong(testCase.value)
 		if testCase.actual != testCase.expected {
 			t.Errorf("CalculateIsArmstrong returned an unexpected result")
 		}
@@ -60,7 +62,7 @@ func TestCalculateIsArmstrongWithTable(t *testing.T) {
 
 		for _, test := range tests {
 			t.Run("test", func(t *testing.T) {
-				actual := CalculateIsArmstrong(test.value)
+				actual := calculator.CalculateIsArmstrong(test.value)
 				if test.expected != actual {
 					t.Fail()
 				}

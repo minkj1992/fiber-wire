@@ -4,6 +4,12 @@
 ```bash
 $ go test ./... -v
 $ cd calculator && go test -run=TestCalculateIsArmstrong -v
+$ cd calculator && go test -run=TestCalculateIsArmstrongWithTable -v
+
+# cov
+$ go test ./... --cover
+$ go test ./... -coverprofile=coverage.out
+$ go tool cover -html=coverage.out
 ```
 
 ## Index
@@ -11,7 +17,7 @@ $ cd calculator && go test -run=TestCalculateIsArmstrong -v
   - [ ] Sub-tests in Go
   - [ ] Table Driven Testing in Go
   - [ ] Test Coverage
-  - [ ] Testdata Directory for Tests
+  - [ ] Testdata Directory for Tests (fixtures)
   - [ ] Benchmarking Your Code
   - [ ] Linting and Formatting
 - Intermediate
