@@ -1,5 +1,3 @@
-// go run ./fileSearch/concurrent_file_search.go
-
 package main
 
 import (
