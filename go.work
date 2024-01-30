@@ -4,7 +4,6 @@ use (
 	./fileSearch
 	./go-micro/authentication-service
 	./go-micro/broker-service
-	./go-micro/authentication-service
 	./go-micro/front-end
 	./gorm-mysql
 	./wire
