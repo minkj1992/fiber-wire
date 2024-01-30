@@ -2,8 +2,10 @@ go 1.18
 
 use (
 	./fileSearch
-	./simple-micro/broker-service
-	./simple-micro/front-end
+	./go-micro/authentication-service
+	./go-micro/broker-service
+	./go-micro/authentication-service
+	./go-micro/front-end
 	./gorm-mysql
 	./wire
 )
