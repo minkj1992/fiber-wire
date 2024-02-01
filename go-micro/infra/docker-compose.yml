@@ -6,32 +6,37 @@ services:
     build:
       context: ./../broker-service
       dockerfile: ./../broker-service/broker-service.dockerfile
-    restart: always
+    restart: on-failure
     ports:
       - "8080:80"
     deploy:
       mode: replicated
       replicas: 1
+    networks:
+      - default      
 
   authentication-service:
     build:
       context: ./../authentication-service
       dockerfile: ./../authentication-service/authentication-service.dockerfile
-    restart: always
+    restart: on-failure
     ports:
       - "8081:80"
     deploy:
       mode: replicated
       replicas: 1
+    depends_on:
+      - postgres
     environment:
       DSN: "host=postgres port=5432 user=postgres password=password dbname=users sslmode=disable timezone=UTC connect_timeout=5"
-
+    networks:
+      - default
 
   postgres:
     image: 'postgres:14.0'
     ports:
       - "5432:5432"
-    restart: always
+    restart: on-failure
     deploy:
       mode: replicated
       replicas: 1
@@ -41,3 +46,9 @@ services:
       POSTGRES_DB: users
     volumes:
       - ./db-data/postgres/:/var/lib/postgresql/data/
+    networks:
+      - default
+
+networks:
+  default:
+    driver: bridge
