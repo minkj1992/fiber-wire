@@ -7,4 +7,5 @@ use (
 	./go-micro/front-end
 	./gorm-mysql
 	./wire
+	./playground
 )
